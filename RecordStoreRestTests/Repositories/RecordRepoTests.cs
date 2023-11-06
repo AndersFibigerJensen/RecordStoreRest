@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RecordStoreRest.Models;
 using RecordStoreRest.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,28 +12,23 @@ namespace RecordStoreRest.Repositories.Tests
     [TestClass()]
     public class RecordRepoTests
     {
-        [TestMethod()]
-        public void RecordRepoTest()
-        {
-            Assert.Fail();
-        }
+
 
         [TestMethod()]
         public void AddRecordTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetRecordsTest()
-        {
-            Assert.Fail();
+            RecordRepo repo = new RecordRepo();
+            int before = repo.GetRecords().Count();
+            Record record= repo.AddRecord(new Record { id=4,Title="ghetto",Author=" eniem",Price=0});
+            int after = repo.GetRecords().Count();
+            Assert.AreEqual(before+1,after);
         }
 
         [TestMethod()]
         public void GetbyidTest()
         {
-            Assert.Fail();
+            RecordRepo repo = new RecordRepo();
+            Assert.AreEqual(repo.GetRecords()[1], repo.Getbyid(2));
         }
 
         [TestMethod()]
