@@ -37,7 +37,8 @@ namespace RecordStoreRest.Repositories.Tests
 
         [TestMethod()]
         public void DeleteRecordTest()
-        {  
+        {
+            Console.WriteLine("congratulations you suck");
         }
 
         [TestMethod()]
